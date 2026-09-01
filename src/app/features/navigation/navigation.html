@@ -1,0 +1,128 @@
+<p>navigation works!</p>
+<nav class="navbar">
+
+  <!-- Logo -->
+  <div class="navbar-brand">
+
+    <a
+      routerLink="/dashboard"
+      (click)="closeMenu()"
+    >
+      <span class="logo">T</span>
+
+      <span class="brand-text">
+        TMS
+      </span>
+    </a>
+
+  </div>
+
+
+  <!-- Mobile Menu Button -->
+  <button
+    type="button"
+    class="menu-toggle"
+    (click)="toggleMenu()"
+    aria-label="Toggle navigation"
+  >
+    ☰
+  </button>
+
+
+  <!-- Navigation Links -->
+  <div
+    class="nav-links"
+    [class.open]="menuOpen"
+  >
+
+    <!-- Dashboard -->
+    <a
+      routerLink="/dashboard"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      (click)="closeMenu()"
+    >
+      <span>🏠</span>
+      Dashboard
+    </a>
+
+
+    <!-- Courses -->
+    <a
+      routerLink="/courses/1"
+      routerLinkActive="active"
+      (click)="closeMenu()"
+    >
+      <span>📚</span>
+      Courses
+    </a>
+
+
+    <!-- Enroll -->
+    <a
+      routerLink="/enroll"
+      routerLinkActive="active"
+      (click)="closeMenu()"
+    >
+      <span>📝</span>
+      Enroll
+    </a>
+
+
+    <!-- Enrollments -->
+    <a
+      routerLink="/enrollments"
+      routerLinkActive="active"
+      (click)="closeMenu()"
+    >
+      <span>📋</span>
+      Enrollments
+    </a>
+
+
+    <!-- Instructor -->
+    <a
+      routerLink="/instructor-dashboard"
+      routerLinkActive="active"
+      (click)="closeMenu()"
+    >
+      <span>👨‍🏫</span>
+      Instructor
+    </a>
+
+
+    <!-- Grade Submission -->
+    <a
+      routerLink="/grade-submission"
+      routerLinkActive="active"
+      (click)="closeMenu()"
+    >
+      <span>📊</span>
+      Grades
+    </a>
+
+
+    <!-- Register -->
+    <a
+      routerLink="/register"
+      routerLinkActive="active"
+      (click)="closeMenu()"
+    >
+      <span>👤</span>
+      Register
+    </a>
+
+
+    <!-- Login -->
+    <a
+      routerLink="/login"
+      routerLinkActive="active"
+      (click)="closeMenu()"
+    >
+      <span>🔐</span>
+      Login
+    </a>
+
+  </div>
+
+</nav>

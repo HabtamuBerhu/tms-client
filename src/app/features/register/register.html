@@ -1,0 +1,219 @@
+<p>register works!</p>
+<div class="register-page">
+
+  <div class="register-card">
+
+    <div class="register-header">
+
+      <div class="logo">
+        T
+      </div>
+
+      <h1>
+        Create Account
+      </h1>
+
+      <p>
+        Register for TMS
+      </p>
+
+    </div>
+
+    @if (errorMessage()) {
+
+      <div class="error-message">
+        {{ errorMessage() }}
+      </div>
+
+    }
+
+    @if (successMessage()) {
+
+      <div class="success-message">
+        {{ successMessage() }}
+      </div>
+
+    }
+
+    <form
+      class="register-form"
+      (ngSubmit)="register()"
+      #registerForm="ngForm"
+    >
+
+      <!-- First Name -->
+      <div class="form-group">
+
+        <label for="firstName">
+          First Name
+        </label>
+
+        <input
+          id="firstName"
+          name="firstName"
+          type="text"
+          [(ngModel)]="firstName"
+          placeholder="Enter your first name"
+          autocomplete="given-name"
+          required
+        />
+
+      </div>
+
+
+      <!-- Last Name -->
+      <div class="form-group">
+
+        <label for="lastName">
+          Last Name
+        </label>
+
+        <input
+          id="lastName"
+          name="lastName"
+          type="text"
+          [(ngModel)]="lastName"
+          placeholder="Enter your last name"
+          autocomplete="family-name"
+          required
+        />
+
+      </div>
+
+
+      <!-- Email -->
+      <div class="form-group">
+
+        <label for="email">
+          Email
+        </label>
+
+        <input
+          id="email"
+          name="email"
+          type="email"
+          [(ngModel)]="email"
+          placeholder="Enter your email"
+          autocomplete="email"
+          required
+        />
+
+      </div>
+
+
+      <!-- Password -->
+      <div class="form-group">
+
+        <label for="password">
+          Password
+        </label>
+
+        <div class="input-wrapper">
+
+          <input
+            id="password"
+            name="password"
+            [type]="showPassword() ? 'text' : 'password'"
+            [(ngModel)]="password"
+            placeholder="Enter your password"
+            autocomplete="new-password"
+            required
+          />
+
+          <button
+            type="button"
+            class="password-toggle"
+            (click)="togglePassword()"
+          >
+            {{ showPassword() ? 'Hide' : 'Show' }}
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- Role -->
+      <div class="form-group">
+
+        <label for="role">
+          Role
+        </label>
+
+        <select
+          id="role"
+          name="role"
+          [(ngModel)]="role"
+          required
+        >
+
+          <option value="" disabled>
+            Select your role
+          </option>
+
+          <option value="Student">
+            Student
+          </option>
+
+          <option value="Instructor">
+            Instructor
+          </option>
+
+          <option value="Admin">
+            Admin
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- Register Button -->
+      <button
+        type="submit"
+        class="register-button"
+        [disabled]="loading() || registerForm.invalid"
+      >
+
+        @if (loading()) {
+
+          <span class="loading-content">
+
+            <span class="spinner"></span>
+
+            Creating account...
+
+          </span>
+
+        } @else {
+
+          Create Account
+
+        }
+
+      </button>
+
+    </form>
+
+
+    <div class="register-footer">
+
+      Already have an account?
+
+      <button
+        type="button"
+        class="login-link"
+        (click)="goToLogin()"
+      >
+        Sign In
+      </button>
+
+      <div class="copyright">
+        TMS &copy; 2026 · Training Management System
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

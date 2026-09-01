@@ -1,0 +1,188 @@
+
+<div class="admin-page">
+
+  <!-- HEADER -->
+  <div class="page-header">
+
+    <div class="header-content">
+
+      <div>
+        <p class="eyebrow">ADMINISTRATION</p>
+
+        <h1>
+          Course Management
+        </h1>
+
+        <p class="subtitle">
+          Manage courses available in the Training Management System.
+        </p>
+      </div>
+
+      @if (auth.hasRole('Admin')) {
+        <button
+          class="add-course-button"
+          type="button"
+          (click)="addCourse()"
+        >
+          <span class="plus">+</span>
+          Add Course
+        </button>
+      }
+
+    </div>
+
+  </div>
+
+
+  <!-- CONTENT -->
+  <div class="content-container">
+
+    <!-- SEARCH -->
+    <div class="toolbar">
+
+      <div class="search-wrapper">
+
+        <span class="search-icon">
+          🔍
+        </span>
+
+        <input
+          type="text"
+          placeholder="Search courses..."
+          [value]="searchTerm()"
+          (input)="onSearch($event)"
+        />
+
+      </div>
+
+      <div class="course-count">
+        {{ filteredCourses().length }}
+        {{ filteredCourses().length === 1 ? 'Course' : 'Courses' }}
+      </div>
+
+    </div>
+
+
+    <!-- COURSE LIST -->
+    @if (filteredCourses().length > 0) {
+
+      <div class="course-grid">
+
+        @for (course of filteredCourses(); track course.id) {
+
+          <div class="course-card">
+
+            <!-- COURSE HEADER -->
+            <div class="course-card-header">
+
+              <div class="course-code">
+                {{ course.code }}
+              </div>
+
+
+              <!-- ADMIN BUTTONS -->
+              @if (auth.hasRole('Admin')) {
+
+                <div class="course-actions">
+
+                  <button
+                    type="button"
+                    class="action-button edit-button"
+                    (click)="editCourse(course)"
+                  >
+                    Edit
+                  </button>
+
+                  <button
+                    type="button"
+                    class="action-button delete-button"
+                    (click)="deleteCourse(course.id)"
+                  >
+                    Delete
+                  </button>
+
+                </div>
+
+              }
+
+            </div>
+
+
+            <!-- COURSE INFORMATION -->
+            <div class="course-content">
+
+              <h2>
+                {{ course.name }}
+              </h2>
+
+              <p>
+                {{ course.description }}
+              </p>
+
+            </div>
+
+
+            <!-- COURSE FOOTER -->
+            <div class="course-footer">
+
+              <span class="credits-label">
+                Credits
+              </span>
+
+              <span class="credits">
+                {{ course.credits }}
+              </span>
+
+            </div>
+
+          </div>
+
+        }
+
+      </div>
+
+    }
+
+
+    <!-- EMPTY STATE -->
+    @else {
+
+      <div class="empty-state">
+
+        <div class="empty-icon">
+          📚
+        </div>
+
+        <h2>
+          No courses found
+        </h2>
+
+        <p>
+          No courses match your search.
+        </p>
+
+        @if (auth.hasRole('Admin')) {
+
+          <button
+            type="button"
+            class="empty-button"
+            (click)="addCourse()"
+          >
+            Add Course
+          </button>
+
+        }
+
+      </div>
+
+    }
+
+  </div>
+
+
+  <!-- FOOTER -->
+  <footer class="admin-footer">
+    TMS &copy; 2026 · Training Management System
+  </footer>
+
+</div>

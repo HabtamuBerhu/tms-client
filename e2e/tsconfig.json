@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "types": [
+      "node",
+      "@playwright/test"
+    ],
+    "module": "commonjs",
+    "target": "ES2020",
+    "strict": true
+  }
+}

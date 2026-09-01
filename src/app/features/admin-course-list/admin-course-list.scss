@@ -1,0 +1,590 @@
+:host {
+  display: block;
+  min-height: 100vh;
+}
+
+
+// =====================================================
+// PAGE
+// =====================================================
+
+.admin-page {
+  min-height: 100vh;
+
+  padding: 32px 40px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #eef4ff 0%,
+      #f8faff 50%,
+      #eaf1ff 100%
+    );
+
+  box-sizing: border-box;
+}
+
+
+// =====================================================
+// HEADER
+// =====================================================
+
+.page-header {
+  margin-bottom: 28px;
+}
+
+.header-content {
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 24px;
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+
+  color: #2563eb;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.2px;
+}
+
+.page-header h1 {
+  margin: 0;
+
+  color: #172033;
+
+  font-size: 30px;
+
+  font-weight: 750;
+}
+
+.subtitle {
+  margin: 8px 0 0;
+
+  color: #718096;
+
+  font-size: 14px;
+}
+
+
+// =====================================================
+// ADD COURSE BUTTON
+// =====================================================
+
+.add-course-button {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 12px 18px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background: #2563eb;
+
+  color: #ffffff;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.2s ease;
+}
+
+.add-course-button:hover {
+  background: #1d4ed8;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 8px 20px rgba(37, 99, 235, 0.25);
+}
+
+.plus {
+  font-size: 20px;
+
+  line-height: 1;
+}
+
+
+// =====================================================
+// CONTENT
+// =====================================================
+
+.content-container {
+  max-width: 1200px;
+
+  margin: 0 auto;
+}
+
+
+// =====================================================
+// TOOLBAR
+// =====================================================
+
+.toolbar {
+  margin-bottom: 22px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 16px;
+}
+
+.search-wrapper {
+  position: relative;
+
+  width: 100%;
+
+  max-width: 430px;
+}
+
+.search-wrapper input {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 13px 14px 13px 42px;
+
+  border: 1px solid #d6dce7;
+
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  color: #172033;
+
+  font-size: 14px;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.search-wrapper input::placeholder {
+  color: #a0a9b8;
+}
+
+.search-wrapper input:focus {
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.search-icon {
+  position: absolute;
+
+  left: 14px;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  font-size: 15px;
+}
+
+.course-count {
+  padding: 8px 13px;
+
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5eaf2;
+
+  color: #667085;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+
+// =====================================================
+// COURSE GRID
+// =====================================================
+
+.course-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 20px;
+}
+
+
+// =====================================================
+// COURSE CARD
+// =====================================================
+
+.course-card {
+  display: flex;
+
+  flex-direction: column;
+
+  min-height: 235px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5eaf2;
+
+  border-radius: 16px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 10px 30px rgba(30, 60, 100, 0.08);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 16px 35px rgba(30, 60, 100, 0.12);
+}
+
+
+// =====================================================
+// COURSE HEADER
+// =====================================================
+
+.course-card-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 18px 18px 12px;
+
+  gap: 12px;
+}
+
+.course-code {
+  display: inline-flex;
+
+  align-items: center;
+
+  padding: 6px 10px;
+
+  border-radius: 7px;
+
+  background: #eef4ff;
+
+  color: #2563eb;
+
+  font-size: 12px;
+
+  font-weight: 800;
+}
+
+
+// =====================================================
+// COURSE ACTIONS
+// =====================================================
+
+.course-actions {
+  display: flex;
+
+  gap: 6px;
+}
+
+
+// =====================================================
+// ACTION BUTTONS
+// =====================================================
+
+.action-button {
+  padding: 6px 9px;
+
+  border-radius: 7px;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.edit-button {
+  border: 1px solid #dbe4f3;
+
+  background: #ffffff;
+
+  color: #475467;
+}
+
+.edit-button:hover {
+  background: #eef4ff;
+
+  color: #2563eb;
+}
+
+.delete-button {
+  border: 1px solid #fee2e2;
+
+  background: #ffffff;
+
+  color: #dc2626;
+}
+
+.delete-button:hover {
+  background: #fff1f2;
+
+  color: #be123c;
+}
+
+
+// =====================================================
+// COURSE CONTENT
+// =====================================================
+
+.course-content {
+  flex: 1;
+
+  padding: 8px 18px 18px;
+}
+
+.course-content h2 {
+  margin: 0 0 10px;
+
+  color: #172033;
+
+  font-size: 19px;
+
+  font-weight: 700;
+
+  line-height: 1.35;
+}
+
+.course-content p {
+  margin: 0;
+
+  color: #718096;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+}
+
+
+// =====================================================
+// COURSE FOOTER
+// =====================================================
+
+.course-footer {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 14px 18px;
+
+  border-top: 1px solid #edf0f5;
+
+  background: #fafbfc;
+}
+
+.credits-label {
+  color: #8792a5;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+.credits {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-width: 28px;
+
+  height: 28px;
+
+  border-radius: 50%;
+
+  background: #2563eb;
+
+  color: #ffffff;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+
+// =====================================================
+// EMPTY STATE
+// =====================================================
+
+.empty-state {
+  padding: 70px 20px;
+
+  text-align: center;
+
+  background: #ffffff;
+
+  border: 1px solid #e5eaf2;
+
+  border-radius: 16px;
+
+  box-shadow:
+    0 10px 30px rgba(30, 60, 100, 0.06);
+}
+
+.empty-icon {
+  font-size: 40px;
+
+  margin-bottom: 15px;
+}
+
+.empty-state h2 {
+  margin: 0;
+
+  color: #172033;
+
+  font-size: 20px;
+}
+
+.empty-state p {
+  margin: 8px 0 20px;
+
+  color: #718096;
+
+  font-size: 14px;
+}
+
+.empty-button {
+  padding: 10px 16px;
+
+  border: none;
+
+  border-radius: 9px;
+
+  background: #2563eb;
+
+  color: #ffffff;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+
+// =====================================================
+// FOOTER
+// =====================================================
+
+.admin-footer {
+  max-width: 1200px;
+
+  margin: 35px auto 0;
+
+  padding-top: 20px;
+
+  border-top: 1px solid #e5eaf2;
+
+  text-align: center;
+
+  color: #8792a5;
+
+  font-size: 12px;
+}
+
+
+// =====================================================
+// RESPONSIVE
+// =====================================================
+
+@media (max-width: 900px) {
+
+  .admin-page {
+    padding: 28px 22px;
+  }
+
+  .course-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+@media (max-width: 620px) {
+
+  .admin-page {
+    padding: 22px 16px;
+  }
+
+  .header-content {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .add-course-button {
+    width: 100%;
+  }
+
+  .toolbar {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .search-wrapper {
+    max-width: none;
+  }
+
+  .course-count {
+    align-self: flex-start;
+  }
+
+  .course-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
